@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Dipanshu - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -158,6 +158,7 @@
         .hero-text {
             flex: 1;
             padding-right: 30px;
+            z-index: 2;
         }
 
         .hero-text h1 {
@@ -183,14 +184,35 @@
         .hero-image {
             flex: 1;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
-        .hero-image img {
-            max-width: 100%;
+        .profile-image-container {
+            width: 350px;
+            height: 350px;
             border-radius: 50%;
+            margin: 0 auto;
             border: 5px solid white;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             animation: float 3s ease-in-out infinite;
+        }
+
+        .profile-image-container i {
+            font-size: 150px;
+            color: white;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
         }
 
         @keyframes float {
@@ -257,7 +279,7 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
@@ -267,6 +289,8 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
@@ -277,6 +301,15 @@
         .project-img {
             height: 200px;
             overflow: hidden;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-img i {
+            font-size: 64px;
+            color: white;
         }
 
         .project-img img {
@@ -284,6 +317,7 @@
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
+            display: none;
         }
 
         .project-card:hover .project-img img {
@@ -292,6 +326,9 @@
 
         .project-info {
             padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-info h3 {
@@ -303,6 +340,7 @@
         .project-info p {
             color: var(--gray);
             margin-bottom: 15px;
+            flex-grow: 1;
         }
 
         .project-tags {
@@ -506,6 +544,11 @@
                 order: 1;
                 margin-bottom: 40px;
             }
+            
+            .profile-image-container {
+                width: 280px;
+                height: 280px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -541,6 +584,19 @@
             .section-title h2 {
                 font-size: 30px;
             }
+            
+            .profile-image-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .profile-image-container i {
+                font-size: 100px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -549,7 +605,7 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Your<span>Name</span></div>
+                <div class="logo">Dip<span>anshu</span></div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -568,15 +624,18 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hi, I'm <span>Your Name</span><br>Web Developer</h1>
-                    <p>I'm a passionate web developer specializing in building exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.</p>
+                    <h1>Hi, I'm <span>DIPANSHU</span><br>Full Stack Java Developer</h1>
+                    <p>I'm a passionate Full Stack Java Developer specializing in building exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.</p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn">View Projects</a>
                         <a href="#contact" class="btn" style="background: transparent; color: var(--primary); border: 2px solid var(--primary);">Contact Me</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://placehold.co/400x400/4a6cf7/ffffff?text=Your+Photo" alt="Profile Photo">
+                    <div class="profile-image-container">
+                        <i class="fas fa-user"></i>
+                        <img src="image/image.jpeg" alt="Dipanshu" class="profile-image" onload="this.style.display='block'; this.previousElementSibling.style.display='none';">
+                    </div>
                 </div>
             </div>
         </div>
@@ -591,8 +650,8 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>My Journey</h3>
-                    <p>Hello! I'm [Your Name], a web developer based in [Your Location]. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.</p>
-                    <p>My journey in web development started back in [Year] when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!</p>
+                    <p>Hello! I'm DIPANSHU, a Full Stack Java Developer based in Alwar. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.</p>
+                    <p>My journey in Full Stack Java Development started back in 1st Year when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS, JS And Java!</p>
                     <p>Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, and as a freelancer for various clients.</p>
                 </div>
                 <div class="about-skills">
@@ -617,7 +676,7 @@
                     </div>
                     <div class="skill">
                         <div class="skill-name">
-                            <span>React</span>
+                            <span>Java</span>
                             <span>80%</span>
                         </div>
                         <div class="skill-bar">
@@ -626,7 +685,7 @@
                     </div>
                     <div class="skill">
                         <div class="skill-name">
-                            <span>Node.js</span>
+                            <span>Spring Boot</span>
                             <span>75%</span>
                         </div>
                         <div class="skill-bar">
@@ -647,45 +706,71 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://placehold.co/600x400/4a6cf7/ffffff?text=Project+1" alt="Project 1">
+                        <i class="fas fa-code"></i>
+                        <img src="https://placehold.co/600x400/4a6cf7/ffffff?text=QuizWiz" alt="QuizWiz" onload="this.style.display='block'; this.previousElementSibling.style.display='none';">
                     </div>
                     <div class="project-info">
-                        <h3>E-Commerce Website</h3>
-                        <p>A fully functional e-commerce website with product filtering, cart functionality, and checkout process.</p>
+                        <h3>QuizWiz</h3>
+                        <p>A fully functional Online Quiz WebApp with product filtering, cart functionality, and checkout process.</p>
                         <div class="project-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
+                            <span>HTML and CSS</span>
+                            <span>JavaScript</span>
+                            <span>Spring-Boot</span>
+                            <span>My Sql</span>
                         </div>
                         <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
+                
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://placehold.co/600x400/6f42c1/ffffff?text=Project+2" alt="Project 2">
+                        <i class="fas fa-tasks"></i>
+                        <img src="https://placehold.co/600x400/6f42c1/ffffff?text=IMREPORTER" alt="IMREPORTER" onload="this.style.display='block'; this.previousElementSibling.style.display='none';">
                     </div>
                     <div class="project-info">
-                        <h3>Task Management App</h3>
+                        <h3>IMREPORTER</h3>
                         <p>A task management application with drag-and-drop functionality, user authentication, and real-time updates.</p>
                         <div class="project-tags">
-                            <span>Vue.js</span>
-                            <span>Firebase</span>
-                            <span>CSS3</span>
+                            <span>HTML and CSS</span>
+                            <span>JavaScript</span>
+                            <span>Node js</span>
+                            <span>Mongo Db</span>
                         </div>
                         <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
+                
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://placehold.co/600x400/1d2a3a/ffffff?text=Project+3" alt="Project 3">
+                        <i class="fas fa-blog"></i>
+                        <img src="https://placehold.co/600x400/1d2a3a/ffffff?text=Mediplus" alt="Mediplus" onload="this.style.display='block'; this.previousElementSibling.style.display='none';">
                     </div>
                     <div class="project-info">
-                        <h3>Travel Blog</h3>
+                        <h3>Mediplus</h3>
                         <p>A responsive travel blog with content management system, comment functionality, and social media integration.</p>
                         <div class="project-tags">
-                            <span>WordPress</span>
-                            <span>PHP</span>
+                            <span>HTML and CSS</span>
                             <span>JavaScript</span>
+                            <span>Spring-Boot</span>
+                            <span>My Sql</span>
+                        </div>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-hospital"></i>
+                        <img src="https://placehold.co/600x400/27ae60/ffffff?text=Healthcare" alt="Healthcare System" onload="this.style.display='block'; this.previousElementSibling.style.display='none';">
+                    </div>
+                    <div class="project-info">
+                        <h3>Healthcare System</h3>
+                        <p>ML-integrated smart healthcare platform with appointment scheduling, symptom analysis, and health recommendations.</p>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>ML Integration</span>
+                            <span>Spring Boot</span>
                         </div>
                         <a href="#" class="btn">View Project</a>
                     </div>
@@ -707,15 +792,15 @@
                     <div class="contact-details">
                         <div>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Your Location, City, Country</span>
+                            <span> Kishangarh Bas ,Alwar, Rajasthan</span>
                         </div>
                         <div>
                             <i class="fas fa-envelope"></i>
-                            <span>your.email@example.com</span>
+                            <span>dipasnshuguptamitrc@gmail.com</span>
                         </div>
                         <div>
                             <i class="fas fa-phone"></i>
-                            <span>+1 (234) 567-8901</span>
+                            <span>+91 9509653019</span>
                         </div>
                     </div>
                 </div>
@@ -745,11 +830,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <h3>Your Name</h3>
+                    <h3>Dipanshu</h3>
                     <p>A web developer building the frontend and backend of websites and web applications that lead to the success of the overall product.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Dipanshugupta04"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/dipanshugupta2005/"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -765,7 +850,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Your Name. All rights reserved.</p>
+                <p>&copy; 2023 Dipanshu. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -832,6 +917,22 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // Fallback for images that don't load
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    if (this.previousElementSibling && this.previousElementSibling.tagName === 'I') {
+                        this.previousElementSibling.style.display = 'flex';
+                    }
+                });
+            });
+            
+            // Animate skill bars on page load
+            setTimeout(animateSkillBars, 500);
         });
     </script>
 </body>
